@@ -18,7 +18,9 @@ class VerifyVersionCommand(install):
         tag = os.getenv("CIRCLE_TAG")
 
         if tag != VERSION:
-            info = "Git tag: {0} does not match the version of this app: {1}".format(tag, VERSION)
+            info = "Git tag: {0} does not match the version of this app: {1}".format(
+                tag, VERSION
+            )
             sys.exit(info)
 
 
@@ -26,17 +28,15 @@ setup(
     name="pypi-project",
     version=VERSION,
     packages=find_packages(exclude=["tests"]),
-    url="https://github.com/pennlabs/github-project",
-    project_urls={
-        "Changelog": ("https://github.com/pennlabs/github-project/blob/master/CHANGELOG.md")
-    },
-    license="MIT",
-    author="Penn Labs",
-    author_email="admin@pennlabs.org",
-    description="Penn Labs example description",
+    url="",
+    project_urls={"Changelog": ()},
+    license=None,
+    author="Peter Kouvaris",
+    author_email="peter@kouvaris.io",
+    description="Abstractions for engineering and science.",
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    install_requires=["django>=2.0.0"],
+    install_requires=["boto3"],
     classifiers=[
         "Framework :: Django",
         "Programming Language :: Python",
